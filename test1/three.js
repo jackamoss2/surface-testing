@@ -4,10 +4,14 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-// import readLocalFile from "./modules/readLocalFile.js";
+import readLocalFile from "./modules/readLocalFile.js";
 import cameraSetup from './modules/cameraSetup.js';
 import lightSetup from './modules/lightSetup.js';
 import createSurface from './modules/createSurface.js';
+
+const dataSource = "EG_Harvey.xml";
+const xmlDataString = readLocalFile("./geometry/" + dataSource);
+console.log(typeof(xmlDataString));
 
 
 const renderer = new THREE.WebGLRenderer();
