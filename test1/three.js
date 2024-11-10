@@ -36,6 +36,11 @@ scene.add(dirLight);
 const mesh = createSurface();
 scene.add( mesh );
 
+const size = 20;
+const divisions = 20;
+const gridHelper = new THREE.GridHelper( size, divisions );
+scene.add( gridHelper );
+
 
 function animate() {
 	renderer.render( scene, camera );
@@ -48,9 +53,3 @@ function onWindowResize() {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
-
-
-
-
-
-

@@ -1,15 +1,17 @@
 import * as THREE from 'three';
 
 function createTriangleBufferGeometry() {
-    // Sample vertices and indices
+    // (x,z,y)
     const vertices = [
-        0.0, 0.0, 0.0,   // Point 1: (0, 0, 0)
-        10.0, 0.0, 0.0,  // Point 2: (10, 0, 0)
-        0.0, 10.0, 0.0   // Point 3: (0, 10, 0)
+        1.0, 0.1, 2.0,
+        1.0, 0.1, -1.0,
+        -1.0, 0.1, -1.0,
+        -1.0, 0.1, 1.0
     ];
 
     const indices = [
-        0, 1, 2  // Triangle using vertices 0, 1, and 2
+        0, 1, 2,
+        0, 2, 3  // Triangle using vertices 0, 1, and 2
     ];
 
     // Create a new BufferGeometry
