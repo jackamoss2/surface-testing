@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import createTriangleBufferGeometry from './createTriangleBufferGeometry.js';
-import createSquareBufferGeometry from './createTriangleBufferGeometry.js';
+import createTriangleBufferGeometry from './createBufferGeometry.js';
+import createSquareBufferGeometry from './createBufferGeometry.js';
 
 function createSurface() {
   const geometry = createTriangleBufferGeometry();

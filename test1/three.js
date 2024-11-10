@@ -8,10 +8,7 @@ import readLocalFile from "./modules/readLocalFile.js";
 import cameraSetup from './modules/cameraSetup.js';
 import lightSetup from './modules/lightSetup.js';
 import createSurface from './modules/createSurface.js';
-
-const dataSource = "EG_Harvey.xml";
-const xmlDataString = readLocalFile("./geometry/" + dataSource);
-console.log(typeof(xmlDataString));
+import updateScene from './modules/updateScene.js';
 
 
 const renderer = new THREE.WebGLRenderer();
@@ -40,6 +37,8 @@ const size = 20;
 const divisions = 20;
 const gridHelper = new THREE.GridHelper( size, divisions );
 scene.add( gridHelper );
+updateScene(scene);
+
 
 
 function animate() {

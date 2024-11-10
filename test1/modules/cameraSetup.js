@@ -6,7 +6,7 @@ function cameraSetup() {
 
     camera.position.x = 0;
     camera.position.y = 5;
-    camera.position.z = -5;
+    camera.position.z = 5;
 
     return camera;
 }
