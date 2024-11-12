@@ -22,7 +22,6 @@ document.body.appendChild(renderer.domElement);
 const camera = cameraSetup();
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target = new THREE.Vector3(0, 0, 0);
-controls.update();
 
 
 const scene = new THREE.Scene();
@@ -38,7 +37,6 @@ const divisions = 20;
 const gridHelper = new THREE.GridHelper( size, divisions );
 scene.add( gridHelper );
 updateScene(scene);
-
 
 
 function animate() {
