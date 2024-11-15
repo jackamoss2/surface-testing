@@ -1,11 +1,13 @@
+// uses wave simulation equations derived in this article:
+// https://medium.com/@matiasortizdiez/beginners-introduction-to-natural-simulation-in-python-ii-simulating-a-water-ripple-809356ffcb43
+
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-import readLocalFile from "./modules/readLocalFile.js";
+// import readLocalFile from "./modules/readLocalFile.js";
 import cameraSetup from './modules/cameraSetup.js';
 import lightSetup from './modules/lightSetup.js';
 import createSurface from './modules/createSurface.js';
-import updateScene from './modules/updateScene.js';
 
 
 const renderer = new THREE.WebGLRenderer();
@@ -19,6 +21,7 @@ document.body.appendChild(renderer.domElement);
 const camera = cameraSetup();
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target = new THREE.Vector3(0, 0, 0);
+controls.update();
 
 
 const scene = new THREE.Scene();
@@ -28,12 +31,6 @@ const dirLight = lightSetup();
 scene.add(dirLight);
 const mesh = createSurface();
 scene.add( mesh );
-
-const size = 20;
-const divisions = 20;
-const gridHelper = new THREE.GridHelper( size, divisions );
-scene.add( gridHelper );
-updateScene(scene);
 
 
 function animate() {
@@ -47,3 +44,9 @@ function onWindowResize() {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
+
+
+
+
+
