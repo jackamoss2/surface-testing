@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 
-
 function lightSetup() {
     const dirLight = new THREE.DirectionalLight(0xbfb58f, 1.0);
     dirLight.position.x += 50
@@ -22,6 +21,6 @@ function lightSetup() {
     dirLight.shadow.camera.lookAt(0, 0, -30);
 
     return dirLight;
-}
+};
 
 export default lightSetup;

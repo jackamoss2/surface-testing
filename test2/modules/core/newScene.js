@@ -1,7 +1,8 @@
 import * as THREE from 'three';
+
 import lightSetup from './lightSetup.js';
 import createSurface from '../createSurface.js';
-import updateScene from '../updateScene.js';
+import updateScene from '../createSurface.js';
 
 function newScene() {
     const scene = new THREE.Scene();
