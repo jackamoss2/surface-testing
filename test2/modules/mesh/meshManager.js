@@ -20,3 +20,11 @@ const meshes = [
 //    geometry: 
 //    material: material,
 // })
+
+
+class Mesh {
+    constructor(geometry, material) {
+        this.geometry = geometry;
+        this.material = material;
+    }
+}
