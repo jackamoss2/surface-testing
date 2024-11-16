@@ -1,9 +1,11 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
+import readLocalFile from "./modules/readLocalFile.js";
 import cameraSetup from './modules/cameraSetup.js';
 import lightSetup from './modules/lightSetup.js';
 import createSurface from './modules/createSurface.js';
+import updateScene from './modules/updateScene.js';
 
 
 const renderer = new THREE.WebGLRenderer();
@@ -27,6 +29,12 @@ scene.add(dirLight);
 const mesh = createSurface();
 scene.add( mesh );
 
+const size = 20;
+const divisions = 20;
+const gridHelper = new THREE.GridHelper( size, divisions );
+scene.add( gridHelper );
+updateScene(scene);
+
 
 function animate() {
 	renderer.render( scene, camera );
@@ -36,11 +44,6 @@ window.addEventListener("resize", onWindowResize, false);
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
+
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
-
-
-
-
-
-

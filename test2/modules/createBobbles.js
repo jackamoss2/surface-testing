@@ -1,8 +1,6 @@
 import * as THREE from 'three';
-import createTriangleBufferGeometry from './createBufferGeometry.js';
-import createSquareBufferGeometry from './createBufferGeometry.js';
 
-function createSurface() {
+function createBobblesList() {
   const geometry = createTriangleBufferGeometry();
   // const geometry = createSquareBufferGeometry();
 
@@ -15,4 +13,4 @@ function createSurface() {
   return mesh;
 }
 
-export default createSurface;
+export default createBobblesList;
