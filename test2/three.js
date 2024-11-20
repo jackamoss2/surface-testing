@@ -20,7 +20,8 @@ const meshes = [];
 // meshManager.remove()
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.target = new THREE.Vector3(0, 0, 0);
+controls.target = new THREE.Vector3(1, 0, 0);
+controls.update();
 
 
 document.body.appendChild(renderer.domElement);
