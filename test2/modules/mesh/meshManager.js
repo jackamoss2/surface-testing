@@ -1,30 +1,9 @@
 import * as THREE from 'three';
-
-// ! ! ! ! ! ! ! ! ?
-// turn into class ?
-// ! ! ! ! ! ! ! ! ?
-
-// meshes.initiate()
-// meshes.update()
-// meshes.removeMesh(id)
-// meshes.addMesh({ //(includes mgr.update)
-//    geometry: 
-//    material: material,
-// })
-  
-let idCounter = 0;
-const meshes = [
-];
+import readLocalFile from '../core/readLocalFile';
 
 function createGeometryXML (xmlDataString) {
-    
-};
 
-function addMesh (mesh) {
-    meshes.push(mesh);
-    idCounter++;
 };
-
 
 const geometry = createGeometryXML(xmlDataString);
 const material = new THREE.MeshBasicMaterial(
@@ -35,6 +14,16 @@ const material = new THREE.MeshBasicMaterial(
 );
 
 const mesh = THREE.mesh(geometry, material);
-addMesh(mesh);
 
+// let idCounter = 0;
+// const meshes = [];
 
+// function addMesh (mesh) {
+//     meshes.push({mesh: mesh, id: idCounter});
+//     idCounter++;
+// };
+
+// for (leti=0;i<meshes.length;i++) {
+//     screen.add(meshes[i].mesh);
+// }
+// addMesh(mesh);
