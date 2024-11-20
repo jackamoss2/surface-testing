@@ -11,8 +11,13 @@ const scene = newScene();
 const camera = newCamera();
 
 
-//load meshes
+//load server-side meshes
 
+
+
+const meshes = [];
+// meshManager.add();
+// meshManager.remove()
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target = new THREE.Vector3(0, 0, 0);

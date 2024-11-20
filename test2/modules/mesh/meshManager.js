@@ -1,30 +1,40 @@
 import * as THREE from 'three';
 
-const meshes = [
-    {
-        id: 1,
-        geometry: geometry,
-        material: material,
-        mesh: mesh(geometry, material)
-    }
-];
+// ! ! ! ! ! ! ! ! ?
+// turn into class ?
+// ! ! ! ! ! ! ! ! ?
 
-// ! ! ! ! ! ! ! ! 
-// turn into class !
-// ! ! ! ! ! ! ! ! 
-
-// meshManager.initiate()
-// meshManager.update()
-// meshManager.removeMesh(id)
-// meshManager.addMesh({ //(includes mgr.update)
+// meshes.initiate()
+// meshes.update()
+// meshes.removeMesh(id)
+// meshes.addMesh({ //(includes mgr.update)
 //    geometry: 
 //    material: material,
 // })
+  
+let idCounter = 0;
+const meshes = [
+];
+
+function createGeometryXML (xmlDataString) {
+    
+};
+
+function addMesh (mesh) {
+    meshes.push(mesh);
+    idCounter++;
+};
 
 
-class Mesh {
-    constructor(geometry, material) {
-        this.geometry = geometry;
-        this.material = material;
+const geometry = createGeometryXML(xmlDataString);
+const material = new THREE.MeshBasicMaterial(
+    {
+        color: 0x777777,
+        wireframe: true
     }
-}
+);
+
+const mesh = THREE.mesh(geometry, material);
+addMesh(mesh);
+
+
