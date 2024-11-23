@@ -10,14 +10,9 @@ const renderer = newRenderer();
 const scene = newScene();
 const camera = newCamera();
 
-
-//load server-side meshes
-
-
-
 const meshes = [];
-// meshManager.add();
-// meshManager.remove()
+// addMesh(serverFile='./geometry/Wilsonville_Ramp.xml');
+// removeMesh() // for html interaction
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target = new THREE.Vector3(1, 0, 0);
