@@ -1,28 +1,22 @@
 import * as THREE from 'three';
 
-import readLocalxml from './modules/readLocalxml';
+import readLocalxml from './modules/readLocalxml.js';
 
-function tester() {
-    console.log('test');
-}
 
-// function xmlParser(xmlString) {
-//     var parser = new DOMParser();
-//     xml = parser.parseFromString(xml, "text/xml");
-//     xmlSurfaces = xml.getElementsByTagName("Surface");
-//     return xmlSurfaces;
-// };
 
 const dataSource = "Wilsonville_Ramp.xml";
 const xml = readLocalxml("./geometry/" + dataSource);
-const surfaces = xml.getElementsByTagName("Surface");
-for (let i=0;i<surfaces.length();i++) {
-    xmlToThreeSurfaces(surfaces[i]);
+const htmlCollection = xml.getElementsByTagName("Surface");
+const surfaces = [...htmlCollection];
+
+for (let i=0;i<surfaces.length;i++) {
+    xmlToThreeSurface(surfaces[i]);
 };
 
-function xmlToThreeSurfaces(surface) {
+function xmlToThreeSurface(surface) {
 
 };
+
 
 function basicMeshes() {
     const meshes = [];
@@ -50,7 +44,7 @@ function basicMeshes() {
         }
     ];
 
-    for (let i=0; i<data.length;i++) {
+    for (let i=0;i<data.length;i++) {
         // const geometry = fn(data[i].source);
         // const mesh = THREE.mesh(geometry, data[i].material);
         // meshes.push(mesh)
@@ -60,4 +54,4 @@ function basicMeshes() {
 }
 
 
-export { tester, basicMeshes };
+export { basicMeshes, xmlToThreeSurface };
