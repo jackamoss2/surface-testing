@@ -14,7 +14,7 @@ for (let i=0;i<surfaces.length;i++) {
 };
 
 function xmlToThreeSurface(surface) {
-
+    // redo extractPoints and extractFaces (keep all tags?)
 };
 
 
